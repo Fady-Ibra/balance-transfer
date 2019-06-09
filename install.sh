@@ -1,7 +1,7 @@
 #! /bin/bash
 
 sudo apt update				&& echo update the package list
-sudo apt install -y jq 			&& echo install JSON Processor
+sudo apt install -y jq 			&& echo install JSON processor
 sudo apt install -y git 		&& echo install git
 sudo apt install -y curl		&& echo install curl
 sudo apt install -y build-essential	&& echo install build-essential
