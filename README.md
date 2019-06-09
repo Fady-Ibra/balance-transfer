@@ -1,7 +1,7 @@
 Balance Transfer
 ================
 
-This repo is based on the Hyperledger Fabric samples https://github.com/hyperledger/fabric-samples/
+This repo is based on the Hyperledger Fabric samples https://github.com/hyperledger/fabric-samples.
 We will provision a Bussiness network with the following docker containers:
 - 2 CAs
 - A SOLO orderer
@@ -25,7 +25,7 @@ wget -O - https://raw.githubusercontent.com/fady-a-m-ibrahim/balance-transfer/ma
 
 
 ```
-IP=<CHANGE_THIS_TO_REAL_VALUE_OF_IP_OF_THE_MACHINE_WHERE_BALANCE_TRANSFER_IS_RUNNING>
+IP=localhost #<CHANGE_THIS_TO_REAL_VALUE_OF_IP_OF_THE_MACHINE_WHERE_BALANCE_TRANSFER_IS_RUNNING>
 ORG1_TOKEN=$(curl -s -X POST \
   http://$IP:4000/users \
   -H "content-type: application/x-www-form-urlencoded" \
