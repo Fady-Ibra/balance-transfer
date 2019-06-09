@@ -1,12 +1,28 @@
-# balance-transfer
+Balance Transfer
+================
 
+This repo is based on the Hyperledger Fabric samples https://github.com/hyperledger/fabric-samples/
+We will provision a Bussiness network with the following docker containers:
+- 2 CAs
+- A SOLO orderer
+- 4 peers (2 peers per Org)
+
+Steps
+-----
+
+1) We start by running the command:
 ```
 wget -O - https://raw.githubusercontent.com/fady-a-m-ibrahim/balance-transfer/master/install.sh | bash
 ```
+We will be asked for the current user passward (this user should have the righ to use sudo)
 
+2) Then We use the command:
 ```
 wget -O - https://raw.githubusercontent.com/fady-a-m-ibrahim/balance-transfer/master/run.sh | bash
 ```
+
+
+
 
 ```
 IP=<CHANGE_THIS_TO_REAL_VALUE_OF_IP_OF_THE_MACHINE_WHERE_BALANCE_TRANSFER_IS_RUNNING>
