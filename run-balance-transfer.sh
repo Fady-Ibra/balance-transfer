@@ -1,4 +1,8 @@
-mkdir fabric && cd fabric
+#! /bin/bash
+
+mkdir fabric
+cd fabric
+rm -r *
 
 curl -sSL https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 source ~/.profile 
