@@ -1,7 +1,8 @@
 #! /bin/bash
 
-mkdir fabric
+mkdir fabric 2> /dev/null
 cd fabric
+rm -r * 2> /dev/null
 
 wget -O - https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 source ~/.profile 
@@ -16,5 +17,3 @@ cd fabric-samples/balance-transfer
 ./runApp.sh &
 sleep 60
 ./testAPIs.sh 
-
-
