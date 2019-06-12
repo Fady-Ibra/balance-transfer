@@ -16,9 +16,13 @@ wget -O - https://raw.githubusercontent.com/fady-a-m-ibrahim/balance-transfer/ma
 ```
 We will be asked for the current user passward (this user should have the righ to use sudo)
 
+```
+nvm install v8.16.0
+```
+
 2) Then We use the command:
 ```
-wget -O - https://raw.githubusercontent.com/fady-a-m-ibrahim/balance-transfer/master/run.sh | bash
+wget -O - https://raw.githubusercontent.com/fady-a-m-ibrahim/balance-transfer/master/run.sh | bash && source ~/.profile
 ```
 
 
