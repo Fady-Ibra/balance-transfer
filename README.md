@@ -28,7 +28,7 @@ nvm install v8.16.0
 wget -O - https://raw.githubusercontent.com/fady-a-m-ibrahim/balance-transfer/master/run.sh | bash
 ```
 
-**4) We by running the command:**
+**4) We update the PATH variable by running the command:**
 ```
 source ~/.profile
 ```
@@ -42,21 +42,21 @@ Steps of Use
 IP=localhost
 PORT=4000
 ```
-We need to change these values if needed 
+We need to change these values if needed. 
 
-**2) We ... by running the command:**
+**2) We send an HTTP POST request to get the JSON Web Token (JWT) by running the command:**
 ```
 ORG1_TOKEN=$(curl -s -X POST \
-  http://$IP:4000/users \
+  http://$IP:$PORT/users \
   -H "content-type: application/x-www-form-urlencoded" \
   -d 'username=Jim&orgName=Org1')
 ORG1_TOKEN=$(echo $ORG1_TOKEN | jq ".token" | sed "s/\"//g")
 ```
 
-**3) We ... by running the command:**
+**3) We send an HTTP GET request to query the bussiness network about the balance of user *a* by running the command:**
 ```
 curl -s -X GET \
-  "http://$IP:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=query&args=%5B%22a%22%5D" \
+  "http://$IP:$PORT/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=query&args=%5B%22a%22%5D" \
   -H "authorization: Bearer $ORG1_TOKEN" \
   -H "content-type: application/json"
 ```
