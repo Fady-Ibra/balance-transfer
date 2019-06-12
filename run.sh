@@ -6,18 +6,19 @@ rm -r * 2> /dev/null
 
 curl -sSL https://raw.githubusercontent.com/hyperledger/fabric/master/scripts/bootstrap.sh | bash
 printf "\n export PATH=\"$PWD/fabric-samples/bin:\$PATH\"" >> ~/.profile
-nvm install v8.16.0
 
 cd fabric-samples/balance-transfer
-./runApp.sh &
-sleep 120
-./testAPIs.sh 
-
+./runApp.sh | \
+while read line; do
+  if echo $line | grep "4000"; then
+    ./testAPIs.sh 
+  fi
+done &
 
 ORG1_TOKEN=$(curl -s -X POST \
   http://localhost:4000/users \
   -H "content-type: application/x-www-form-urlencoded" \
-  -d 'username=Jim&orgName=Org1')
+  -d 'username=fady&orgName=Org1')
 
 ORG1_TOKEN=$(echo $ORG1_TOKEN | jq ".token" | sed "s/\"//g")
 
