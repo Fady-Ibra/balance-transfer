@@ -63,7 +63,7 @@ curl -s -X GET \
   -H "content-type: application/json"
 ```
 Here, we see how we can query the balance of user *a*.
-
+Hint: **%5B%22a%22%5D** is the encode of **["a"]**.
 
 Call the Server using any Programing Language
 -----
