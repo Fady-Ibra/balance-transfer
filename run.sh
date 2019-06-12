@@ -10,7 +10,7 @@ nvm install v8.16.0
 
 cd fabric-samples/balance-transfer
 ./runApp.sh &
-sleep 60
+sleep 120
 ./testAPIs.sh 
 
 
