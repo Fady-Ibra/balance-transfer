@@ -11,14 +11,12 @@ cd fabric-samples/balance-transfer
 ./runApp.sh | \
 while read line; do
   if echo $line | grep "4000"; then
-
     ./testAPIs.sh 
 
     ORG1_TOKEN=$(curl -s -X POST \
       http://localhost:4000/users \
       -H "content-type: application/x-www-form-urlencoded" \
       -d 'username=fady&orgName=Org1')
-
     ORG1_TOKEN=$(echo $ORG1_TOKEN | jq ".token" | sed "s/\"//g")
 
     curl -s -X POST \
@@ -31,6 +29,5 @@ while read line; do
 	"chaincodeType": "golang",
 	"args":["a","100000","b","200000"]
       }'
-
   fi
 done 
