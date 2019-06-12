@@ -10,21 +10,22 @@ We will provision a Bussiness network with the following docker containers:
 Steps
 -----
 
-1) We start by running the command:
+**1)** We install the required software by running the command:
 ```
 wget -O - https://raw.githubusercontent.com/fady-a-m-ibrahim/balance-transfer/master/install.sh | bash
 ```
-We will be asked for the current user passward (this user should have the righ to use sudo)
+We will be asked for the current user password (this user should have the right to use sudo).
 
+**2)** We install the required version of nodeJS by running the command:
 ```
 nvm install v8.16.0
 ```
 
 2) Then We use the command:
 ```
-wget -O - https://raw.githubusercontent.com/fady-a-m-ibrahim/balance-transfer/master/run.sh | bash && source ~/.profile
+wget -O - https://raw.githubusercontent.com/fady-a-m-ibrahim/balance-transfer/master/run.sh | bash
+source ~/.profile
 ```
-
 
 
 
