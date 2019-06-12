@@ -1,6 +1,7 @@
 Balance Transfer
 ================
 
+
 This repo is based on the Hyperledger Fabric samples https://github.com/hyperledger/fabric-samples.
 We will provision a business network with the following docker containers:
 - 2 CAs
@@ -15,7 +16,7 @@ Steps of Install and Run
 ```
 wget -O - https://raw.githubusercontent.com/fady-a-m-ibrahim/balance-transfer/master/install.sh | bash
 ```
-We will be asked for the current user password (this user should have the right to use sudo).
+We will be asked about the current user password (this user should have the right to use sudo).
 After the installation is completed, the machine will reboot. We wait until the command line is becoming available again.
 
 **2) We install the required version of node JS by running the command:**
@@ -49,7 +50,7 @@ We have to change these values if needed.
 ORG1_TOKEN=$(curl -s -X POST \
   http://$IP:$PORT/users \
   -H "content-type: application/x-www-form-urlencoded" \
-  -d 'username=Jim&orgName=Org1')
+  -d 'username=fady&orgName=Org1')
 ORG1_TOKEN=$(echo $ORG1_TOKEN | jq ".token" | sed "s/\"//g")
 ```
 Here, after we get the HTTP POST reply, we filter the reply to put only the **JWT** in the variable ORG1_TOKEN.
@@ -66,4 +67,4 @@ Here, we see how we can query the balance of user *a*.
 
 Call the Server using any Programing Language
 -----
-We can use the steps of use to create an automatic call from any programing language we choose.
+We can use the **Steps of Use** to create an automatic call from any programing language we choose.
