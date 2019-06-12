@@ -5,12 +5,10 @@ cd fabric
 rm -r * 2> /dev/null
 
 curl -sSL https://raw.githubusercontent.com/hyperledger/fabric/master/scripts/bootstrap.sh | bash
-echo "" >> ~/.profile
-echo "export PATH=\"$PWD/fabric-samples/bin:\$PATH\"" >> ~/.profile
-
 curl -sSL https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
-. /home/$USER/.bashrc
-. /home/$USER/.profile
+printf "\n export PATH=\"$PWD/fabric-samples/bin:\$PATH\"" ~/.profile
+/bin/bash -c  "source /home/$USER/.bashrc"
+/bin/bash -c  "source /home/$USER/.profile"
 nvm install v8.16.0
 
 cd fabric-samples/balance-transfer
