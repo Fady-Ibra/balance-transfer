@@ -9,8 +9,7 @@ echo "" >> ~/.profile
 echo "export PATH=\"$PWD/fabric-samples/bin:\$PATH\"" >> ~/.profile
 
 curl -sSL https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
-source ~/.bashrc
-source ~/.profile
+/bin/bash -c 'source /home/$USER/.profile'
 nvm install v8.16.0
 
 cd fabric-samples/balance-transfer
