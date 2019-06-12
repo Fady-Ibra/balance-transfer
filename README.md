@@ -2,7 +2,7 @@ Balance Transfer
 ================
 
 This repo is based on the Hyperledger Fabric samples https://github.com/hyperledger/fabric-samples.
-We will provision a bussiness network with the following docker containers:
+We will provision a business network with the following docker containers:
 - 2 CAs
 - A SOLO orderer
 - 4 peers (2 peers per Org)
@@ -42,9 +42,9 @@ Steps of Use
 IP=localhost
 PORT=4000
 ```
-We need to change these values if needed. 
+We have to change these values if needed. 
 
-**2) We send an HTTP POST request to get the JSON Web Token (JWT) by running the command:**
+**2) We send an HTTP POST request to get the JSON Web Token (JWT) by running the commands:**
 ```
 ORG1_TOKEN=$(curl -s -X POST \
   http://$IP:$PORT/users \
@@ -52,14 +52,16 @@ ORG1_TOKEN=$(curl -s -X POST \
   -d 'username=Jim&orgName=Org1')
 ORG1_TOKEN=$(echo $ORG1_TOKEN | jq ".token" | sed "s/\"//g")
 ```
+Here, after we get the HTTP POST reply, we filter the reply to put only the **JWT** in the variable ORG1_TOKEN.
 
-**3) We send an HTTP GET request to query the bussiness network about the balance of user *a* by running the command:**
+**3) We send an HTTP GET request to query the business network by running the command:**
 ```
 curl -s -X GET \
   "http://$IP:$PORT/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=query&args=%5B%22a%22%5D" \
   -H "authorization: Bearer $ORG1_TOKEN" \
   -H "content-type: application/json"
 ```
+Here, we see how we can query the balance of user *a*.
 
 
 Call the Server using any Programing Language
