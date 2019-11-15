@@ -27,7 +27,7 @@ while read line; do
 	"chaincodeName":"mycc",
 	"chaincodeVersion":"v0",
 	"chaincodeType": "golang",
-	"args":["a","100000","b","200000"]
+	"args":["alice","100000","bob","200000"]
       }'
   fi
 done 
