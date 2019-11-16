@@ -58,12 +58,12 @@ Here, after we get the HTTP POST reply, we filter the reply to put only the **JW
 **3) We send an HTTP GET request to query the business network by running the command:**
 ```
 curl -s -X GET \
-  "http://$IP:$PORT/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=query&args=%5B%22a%22%5D" \
+  "http://$IP:$PORT/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=query&args=%5B%22alice%22%5D" \
   -H "authorization: Bearer $ORG1_TOKEN" \
   -H "content-type: application/json"
 ```
-Here, we see how we can query the balance of user *a*.
-Hint: **%5B%22a%22%5D** is the encode of **["a"]**.
+Here, we see how we can query the balance of user *alice*.
+Hint: **%5B%22alice%22%5D** is the encode of **["a"]**.
 
 Call the Server using any Programing Language
 -----
