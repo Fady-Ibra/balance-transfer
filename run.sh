@@ -4,10 +4,14 @@ mkdir fabric 2> /dev/null
 cd fabric
 rm -fr * 2> /dev/null
 
-curl -sSL https://raw.githubusercontent.com/hyperledger/fabric/v1.4.6/scripts/bootstrap.sh | bash
+curl -sSL https://raw.githubusercontent.com/hyperledger/fabric/master/scripts/bootstrap.sh | bash
 printf "\n export PATH=\"$PWD/fabric-samples/bin:\$PATH\" \n" >> ~/.profile
 
-cd fabric-samples/balance-transfer
+cd fabric-samples/
+git checkout v1.4.6
+git branch
+
+cd  balance-transfer/
 ./runApp.sh | \
 while read line; do
   if echo $line | grep "4000"; then
