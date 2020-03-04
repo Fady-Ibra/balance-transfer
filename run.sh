@@ -6,12 +6,20 @@ rm -fr * 2> /dev/null
 
 curl -sSL https://raw.githubusercontent.com/hyperledger/fabric/master/scripts/bootstrap.sh | bash
 printf "\n export PATH=\"$PWD/fabric-samples/bin:\$PATH\" \n" >> ~/.profile
+source ~/.profile
 
 cd fabric-samples/
 git checkout v1.4.6
 git branch
 
 cd  balance-transfer/
+nohup ./runApp.sh & 
+
+nohub ./testAPIs.sh &
+
+###############################
+#This part needs to be updated#
+###############################
 ./runApp.sh | \
 while read line; do
   if echo $line | grep "4000"; then
@@ -35,3 +43,4 @@ while read line; do
       }'
   fi
 done 
+###############################
