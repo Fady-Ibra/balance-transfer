@@ -23,6 +23,7 @@ After the installation is completed, the machine will reboot. We wait until the 
 ```
 nvm install v8.16.0
 ```
+To install the last version of node JS, we can use `nvm install --lts`
 
 **3) We run the Bussiness network by running the command:**
 ```
